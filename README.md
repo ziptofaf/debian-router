@@ -1,0 +1,2 @@
+In short - this will be a Ruby on Rails (with quite a lot of C++ and shell scripts) application that enables you to use any Linux (preferably Debian/Xubuntu based) operating system as a full fledged router - with a web frontend, port
+forwarding, DHCP and all other things normal routers have. Plus bonus features such as TOR/VPN relay. Note - it will require at least 2 network interfaces (this version of the code will be optimized for eth0, eth1 and wlan0).
