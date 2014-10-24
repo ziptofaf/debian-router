@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  operating_system: MyString
+  current_version: MyString
+  adapter_count: 1
+
+two:
+  operating_system: MyString
+  current_version: MyString
+  adapter_count: 1
