@@ -1,9 +1,9 @@
 class BasicController < ApplicationController
   include BasicHelper
+  #skip_before_action :authorize
   def status
-    Environment.setIfEmpty #this should be initialized by model itself before any finds
+    @specs = Environment.safeFirst
     @macs = getMacs
-    @specs = Environment.first
   end
 
 end

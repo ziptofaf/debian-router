@@ -7,7 +7,7 @@ module BasicHelper
 
   def wifiAvailable?
     stdout = Open3.capture2("ifconfig | grep 'wlan'")
-    return true if stdout[0].split("\n").length #this returns the number of wlan adapters
+    return true if stdout[0].split("\n").length #this actually gives the number of wlan adapters
     return false
   end
 end

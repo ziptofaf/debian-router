@@ -1,6 +1,12 @@
 class Environment < ActiveRecord::Base
   require 'mac-address'
 public
+  def self.safeFirst #guaranteed to yield some results even if database was purged
+    self.setIfEmpty
+    self.first
+  end
+
+private
   def self.setIfEmpty
     if Environment.first.nil?
       env = Environment.new

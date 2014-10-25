@@ -1,5 +1,10 @@
 <h1>Status</h1>
-
+<% if flash[:error] %>
+<div class = "alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+<% if flash[:info] %>
+<div class = "alert alert-info"><%= flash[:info] %></div>
+<% end %>
 <p>Current version: <%= @specs.current_version %></p>
 <p>Operating system: <%= @specs.operating_system %>
 <p>Network adapters: <%= @specs.adapter_count %></p>
@@ -11,3 +16,4 @@
 <% else %>
 <p>WiFi unavailable</p>
 <% end %>
+Hello, <%= @loggedUser.username %>

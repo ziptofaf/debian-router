@@ -1,0 +1,23 @@
+<div class = "col-md-3">
+
+<% if flash[:error] %>
+<div class = "alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+
+<% if flash[:info] %>
+<div class = "alert alert-info"><%= flash[:info] %></div>
+<% end %>
+
+<h1>Login panel</h1>
+<%= form_for :session, url: session_login_path do |f| %>
+<table class = "table table-bordered">
+<tbody>
+<tr><td>
+Login</td><td><%= f.text_field :username %></td></tr>
+<tr><td>Password</td><td>
+<%= f.password_field :password %></td></tr>
+<tr><td><%= f.submit "Login", :class => "btn btn-default btn-lg" %></td></tr>
+</tbody>
+</table>
+<% end %>
+</div>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  post 'session/login'
+
+  get 'session/logout'
+
+  get 'session/login_panel'
+
   #get 'basic/status'
   root 'basic#status'
   resources :users
