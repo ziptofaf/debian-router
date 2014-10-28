@@ -12,6 +12,8 @@ class SessionController < ApplicationController
 
   def logout
     logOut
+    flash.now[:info] = "You have succesfully logged out"
+    render 'login_panel'
   end
 
   def login_panel

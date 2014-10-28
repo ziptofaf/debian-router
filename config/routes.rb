@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   post 'session/login'
 
-  get 'session/logout'
-
+  match 'login', to: 'session#login_panel', via: :get
+  match 'logout', to: 'session#logout', via: :get
   get 'session/login_panel'
 
   #get 'basic/status'

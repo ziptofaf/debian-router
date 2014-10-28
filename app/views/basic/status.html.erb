@@ -16,4 +16,8 @@
 <% else %>
 <p>WiFi unavailable</p>
 <% end %>
-Hello, <%= @loggedUser.username %>
+Hello, <%= @loggedUser.username %><br />
+System up time: <%= @uptime[:hours] %> hours, <%= @uptime[:minutes] %> minutes and <%= @uptime[:seconds] %> seconds <br />
+Average CPU load: <%= @systemLoad %>%
+<br />
+<%= link_to "Log out", logout_path %>

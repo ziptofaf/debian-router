@@ -8,13 +8,13 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if !isLoggedIn?
-      redirect_to session_login_panel_path and @loggedUser = nil and return
+      redirect_to login_path and @loggedUser = nil and return
     else
-      @loggedUser ||= showUser
+      @loggedUser ||= showUser #this is pretty much a User.find using session[:user_id]
     end
   end
 
   def adminAuthorize
-    flash[:error] = "You don't have necessary privileges to access this feature" and redirect_to root_path unless @loggedUser.level>=1
+    flash[:error] = "You don't have necessary privileges to access this feature" and redirect_to root_path unless @loggedUser.level>=1 #admins have privileges level of 2
   end
 end

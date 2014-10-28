@@ -4,6 +4,8 @@ class BasicController < ApplicationController
   def status
     @specs = Environment.safeFirst
     @macs = getMacs
+    @uptime = uptime
+    @systemLoad = (systemLoad*100).to_i
   end
 
 end

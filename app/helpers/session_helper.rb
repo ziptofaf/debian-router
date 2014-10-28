@@ -1,6 +1,5 @@
 module SessionHelper
 
-  attr_accessor :user
   def isLoggedIn?
     session[:timestamp] = 15.minutes.from_now and return true if session[:user_id] and
                           session[:timestamp] and session[:timestamp].to_datetime > Time.now
