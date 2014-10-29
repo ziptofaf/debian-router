@@ -1,2 +1,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.center {
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main_bar {
+  position: relative;
+  width: 950px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu_bar{
+  margin-top: 18px;
+  position: absolute;
+  margin-left: 2px;
+  width: 14%;
+}
+.container {
+  margin-top: 24px;
+  margin-left: 15%;
+  position: absolute;
+  width: 60%;
+  word-wrap: break-word;
+}
+.help_bar {
+  margin-top: 24px;
+  margin-left: 74%;
+  position: absolute;
+  width: 25%;
+  word-wrap: break-word;
+}
+.login {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}

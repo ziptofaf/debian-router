@@ -1,4 +1,4 @@
-<h1>Status</h1>
+<div class = "container">
 <% if flash[:error] %>
 <div class = "alert alert-danger"><%= flash[:error] %></div>
 <% end %>
@@ -18,6 +18,9 @@
 <% end %>
 Hello, <%= @loggedUser.username %><br />
 System up time: <%= @uptime[:hours] %> hours, <%= @uptime[:minutes] %> minutes and <%= @uptime[:seconds] %> seconds <br />
-Average CPU load: <%= @systemLoad %>%
+CPU load: <%= @systemLoad %>%
 <br />
-<%= link_to "Log out", logout_path %>
+</div>
+<div class = "help_bar">
+Current version shows the version of the Debian-Router firmware
+</div>

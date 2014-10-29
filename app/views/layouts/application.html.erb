@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Debianrouter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Debian-router</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class = "main_bar">
+    <div class = "menu_bar">
+      <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li><%= link_to "Status", root_path %></li>
+        <li><a href="#">WiFi</a></li>
+        <li><a href="#">Lan</a></li>
+        <li><%= link_to "Logout", logout_path %></li>
+      </ul>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>

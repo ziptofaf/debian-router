@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   include SessionHelper
+  layout "login"
   skip_before_action :authorize
   def login
     invalidAttempt and render 'login_panel' and return unless session_params[:username] and
@@ -12,7 +13,7 @@ class SessionController < ApplicationController
 
   def logout
     logOut
-    flash.now[:info] = "You have succesfully logged out"
+    flash.now[:info] = "You have successfully logged out"
     render 'login_panel'
   end
 
