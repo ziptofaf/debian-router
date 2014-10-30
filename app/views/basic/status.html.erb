@@ -18,8 +18,15 @@
 <% end %>
 Hello, <%= @loggedUser.username %><br />
 System up time: <%= @uptime[:hours] %> hours, <%= @uptime[:minutes] %> minutes and <%= @uptime[:seconds] %> seconds <br />
-CPU load: <%= @systemLoad %>%
+Average CPU load: <%= @systemLoad %>% <br /> <% if @systemLoad>=100 %> Warning - CPU load exceeds 100%, delays may occur <br /><% end %>
+Free space: <%= (freeSpace/1024.to_f).round(2) %>GB
 <br />
+Top ten processes:<br />
+<ul>
+<% topProcesses.each do |process| %>
+<li><%= process[0] %> - <%= ((process[1].to_f)/cores.to_f).round(2) %> % CPU used </li>
+<% end %>
+</ul>
 </div>
 <div class = "help_bar">
 Current version shows the version of the Debian-Router firmware
