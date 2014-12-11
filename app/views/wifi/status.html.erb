@@ -1,0 +1,12 @@
+<div class = "container">
+  <% if flash[:error] %>
+  <div class = "alert alert-danger"><%= flash[:error] %></div>
+  <% end %>
+  <% if flash[:info] %>
+  <div class = "alert alert-info"><%= flash[:info] %></div>
+  <% end %>
+
+  </div>
+  <div class = "help_bar">
+    Current version shows the version of the Debian-Router firmware
+  </div>

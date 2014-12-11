@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'wifi/status'
+
   post 'session/login'
 
   match 'login', to: 'session#login_panel', via: :get
   match 'logout', to: 'session#logout', via: :get
   get 'session/login_panel'
-
-  #get 'basic/status'
+  get 'wifi/wifi_on'
+  get 'wifi/wifi_off'
   root 'basic#status'
   resources :users
 

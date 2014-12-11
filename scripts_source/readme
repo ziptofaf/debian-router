@@ -1,0 +1,8 @@
+Here are the sources of C++ binaries that will work on changing config files 
+in /etc, perform root level commands etc. Compile them and under same name
+(just without .cpp) shove into /scripts. They will need to be ran under root
+level (no real way around it so make sure they are NOT writable by any lower
+level user). 
+Example:
+wifi_off.cpp -> compile to wifi_off, put it into /scripts
+Then use chown root and chmod u+x on it. 
