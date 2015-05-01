@@ -17,7 +17,12 @@
 <p>WiFi unavailable</p>
 <% end %>
 Hello, <%= @loggedUser.username %><br />
-System up time: <%= @uptime[:hours] %> hours, <%= @uptime[:minutes] %> minutes and <%= @uptime[:seconds] %> seconds <br />
+System up time:
+<% if @uptimeError %>
+Uptime can't be determined yet, please wait<br />
+<% else %>
+<%= @uptime[:hours] %> hours, <%= @uptime[:minutes] %> minutes and <%= @uptime[:seconds] %> seconds <br />
+<% end %>
 Average CPU load: <%= @systemLoad %>% <br /> <% if @systemLoad>=100 %> Warning - CPU load exceeds 100%, delays may occur <br /><% end %>
 Free space: <%= (freeSpace/1024.to_f).round(2) %>GB
 <br />

@@ -10,11 +10,12 @@ module BasicHelper
 
   def wifiAvailable?
     stdout = Open3.capture2("ifconfig | grep 'wlan'")
-    return true if stdout[0].split("\n").length #this actually gives the number of wlan adapters
+    return true if stdout[0].split("\n").length >= 1 #this actually gives the number of wlan adapters
     return false
   end
 
   def uptime
+    begin
     uptime = uptimeHours
     formatted = Hash.new
     formatted[:hours] = uptime.to_i
@@ -22,8 +23,11 @@ module BasicHelper
     formatted[:seconds] = ((uptime*3600%3600)%60).to_i
     formatted[:minutes] = formatted[:minutes].to_i
     return formatted
+    rescue
+    raise "Uptime cannot be determined"
+    end
   end
-  
+
   def cores
     core_count = Open3.capture2("nproc")
     core_count = core_count[0].to_i
