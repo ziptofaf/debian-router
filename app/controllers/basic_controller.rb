@@ -1,8 +1,8 @@
 class BasicController < ApplicationController
+  require 'wifi_handler'
   include BasicHelper
   #skip_before_action :authorize
   def status
-
     @specs = Environment.safeFirst
     @macs = getMacs
     begin
