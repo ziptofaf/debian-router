@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'setup/quicksetup'
+  post 'setup/quicksetup'
+  get 'setup/advanced'
   get 'wifi/status'
-
   post 'session/login'
 
   match 'login', to: 'session#login_panel', via: :get

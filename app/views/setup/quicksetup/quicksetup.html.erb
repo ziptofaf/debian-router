@@ -1,0 +1,20 @@
+<div class = "container">
+<h1>Quick guide to walk you through setting up this device</h1>
+<% if wifiAvailable? %>
+<p>It seems Wifi is available for this machine meaning you have 2 options - you can either get internet through Wifi or through LAN.</p>
+<%= form_for "quicksetup" do |f| %>
+  Choose which adapter will you use to connect to internet:<br>
+  <%= f.label :lan %>
+  <%= f.radio_button(:adapter, "lan", :checked=>true) %><br>
+  <%= f.label :wifi %>
+  <%= f.radio_button(:adapter, "wifi") %><br>
+  <%= f.submit "Continue", :class => "btn btn-default"%>
+<% end %>
+<% else %>
+<p> It seems WiFi is unavailable for your device, meaning that you will be getting internet via LAN cable and share it via another LAN cable.
+  Choose which adapter will you use to connect to internet:<br>
+  <%= f.label :lan %>
+  <%= f.radio_button(:adapter, "lan", :checked=>true) %><br>
+  <%= f.submit "Continue", :class => "btn btn-default"%>
+<% end %>
+</div>

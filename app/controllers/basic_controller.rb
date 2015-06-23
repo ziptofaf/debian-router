@@ -1,5 +1,5 @@
 class BasicController < ApplicationController
-  require 'wifi_handler'
+  require 'wifi_client_handler'
   include BasicHelper
   #skip_before_action :authorize
   def status
@@ -7,8 +7,7 @@ class BasicController < ApplicationController
     @macs = getMacs
     begin
     @uptime = uptime
-
-  rescue => e
+    rescue
       @uptimeError = true
     end
     @systemLoad = (systemLoad*100).to_i
